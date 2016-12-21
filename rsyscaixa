@@ -1,0 +1,7 @@
+##Tela de fluxo de caixa##
+Nesta tela devemos implementar:
+-Campo para valor.
+-Campo para cliente (Com busca).
+-Campo descrição.
+-Check-box para identificar receita ou despesa.
+-Grid para mostrar lançamentos por período.
