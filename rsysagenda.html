@@ -3,13 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>Dudu Alves Tattoo</title>
-
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
   </head>
   <body>
     <!-- Navbar-->
@@ -30,23 +27,67 @@
         <ul class="nav navbar-nav">
           <li><a href="rsyslogin.html">Login</a></li>
           <li class="active"><a href="#">Agenda<span class="sr-only">(current)</span></a></li>
-          <li><a href="rsysclientes.html">Clientes</a></li>                
+          <li><a href="rsysclientes.html">Clientes</a></li>
+          <li><a href="rsyscaixa.html">Financeiro</a></li>
         </ul>
         <form class="navbar-form navbar-left">      
       </div><!-- /.navbar-collapse -->
   
     </nav>
     <!-- Navbar-->
-
     <!--Agenda-->
-
       <div class="container">
-
-<h2>Agenda</h2>
+    <h2>Agenda</h2>
     <p class="lead">
         Agenda de atendimentos
     </p>
     <hr />
+    <form class="form-horizontal">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Nome</label>
+        <div class="col-sm-2">
+          <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Digite o nome">
+        </div>
+      </div>
+      <div class="clearfix"></div><!--Macete para quebra de linha-->
+      <form class="form-horizontal">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Data</label>
+        <div class="col-sm-2">
+          <input class="form-control" type="date" id="formGroupInputSmall">
+        </div>
+      </div>
+      <div class="clearfix"></div><!--Macete para quebra de linha-->
+      <form class="form-horizontal">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Hora</label>
+        <div class="col-sm-2">
+          <input class="form-control" type="time" id="formGroupInputSmall">
+        </div>
+      </div>
+      <div class="clearfix"></div><!--Macete para quebra de linha-->
+      <form class="form-horizontal">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Descrição</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Digite uma descrição para o evento">
+        </div>
+      </div>
+      <div class="clearfix"></div><!--Macete para quebra de linha-->
+      <br>
+      <form class="form-horizontal">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" class="checkbox-inline" for="formGroupInputSmall">Confirmado?</label>        
+          <input  type="checkbox" id="cbEventoConfirmado" value="confirmado">        
+      </div>
+    <div class="clearfix"></div><!--Macete para quebra de linha-->
+        <br>
+        <div class="form-group form-group-sm">
+          <button type="button" class="btn btn-primary">Pesquisar</button>
+          <button type="button" class="btn btn-success">Salvar</button>
+          <button type="button" class="btn btn-warning">Alterar</button>
+          <button type="button" class="btn btn-danger">Excluir</button>
+      </div>
     <div class="agenda">
         <div class="table-responsive">
             <table class="table table-condensed table-bordered">
@@ -54,7 +95,9 @@
                     <tr>
                         <th>Data</th>
                         <th>Hora</th>
+                        <th>Nome</th>
                         <th>Evento</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,12 +111,18 @@
                         <td class="agenda-time">
                             5:30 AM
                         </td>
+                        <td>
+                            <div class="text">Gaucho</div>
+                        </td>
                         <td class="agenda-events">
                             <div class="agenda-event">
                                 <i class="glyphicon glyphicon-repeat text-muted" title="Repeating event"></i> 
                                 Grafite churrascaria do Gaucho
                             </div>
                         </td>
+                        <td>
+                            <div class="text">Confirmado</div>
+                        </td>                        
                     </tr>
                     
                     <!-- Multiple events in a single day (note the rowspan) -->
@@ -86,31 +135,43 @@
                         <td class="agenda-time">
                             8:00 - 9:00 AM 
                         </td>
+                        <td>
+                            <div class="text">Kellen</div>
+                        </td>
                         <td class="agenda-events">
                             <div class="agenda-event">
                                 Tatuagem Kellen
                             </div>
                         </td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td class="agenda-time">
                             10:15 AM - 12:00 PM 
+                        </td>
+                        <td>
+                            <div class="text">Romulo</div>
                         </td>
                         <td class="agenda-events">
                             <div class="agenda-event">
                                 Retoque tatuagem Romulo
                             </div>
                         </td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td class="agenda-time">
                             7:00 - 9:00 PM
+                        </td>
+                        <td>
+                            <div class="text">Dudu Tattoo</div>
                         </td>
                         <td class="agenda-events">
                             <div class="agenda-event">
                                 Aniversário do Estúdio
                             </div>
                         </td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -124,5 +185,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
   </body>
 </html>
