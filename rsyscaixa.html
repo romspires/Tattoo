@@ -1,7 +1,146 @@
-##Tela de fluxo de caixa##
-Nesta tela devemos implementar:
--Campo para valor.
--Campo para cliente (Com busca).
--Campo descrição.
--Check-box para identificar receita ou despesa.
--Grid para mostrar lançamentos por período.
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Dudu Alves Tattoo</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+  </head>
+  <body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Dudu Tattoo</a>
+        </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="rsyslogin.html">Login</a></li>          
+          <li><a href="rsysagenda.html">Agenda</a></li>
+          <li><a href="rsysclientes.html">Clientes</a></li>
+          <li class="active"><a href="#">Financeiro<span class="sr-only">(current)</span></a></li>
+        </ul>
+        <form class="navbar-form navbar-left">      
+      </div><!-- /.navbar-collapse -->  
+    </nav>
+    <!--fim Navbar-->
+    <!-- Clientes-->
+    <div class="container">
+    <div class="page-header">
+      <h1>Movimentação financeira
+      <br>
+      <small>Controle de entradas e saídas</small></h1>
+    </div>
+    <form class="form-horizontal">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Valor</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Digite o valor">
+        </div>
+      </div>
+      <div class="clearfix"></div><!--Macete para quebra de linha-->
+      <div class="form-group form-group-sm">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Cliente</label><!--A medida que o nome for sendo digitado o sistema deverá buscar uma correspondência-->
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Digite o nome para pesquisar">
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <br>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Comentário</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Digite um comentário">
+        </div>
+      </div>        
+    </form>
+    </div>
+    <div class="clearfix"></div><!--Macete para quebra de linha-->
+      <br>
+      <div class="container">
+        <label class="col-sm-1 control-label" for="formGroupInputSmall">Data</label>
+        <form class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail3">Data1</label>
+            <input type="date" class="form-control" id="dtInicial">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword3">Data2</label>
+            <input type="date" class="form-control" id="dtFinal">
+          </div>               
+        </form>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Despesa
+                </label>
+              </div>
+            </div>
+          </div>
+      </div>
+   <!--Botões-->
+    <div class="container">
+      <div class="clearfix"></div><!--Macete para quebra de linha-->
+        <br>
+        <div class="form-group form-group-sm">
+          <button type="button" class="btn btn-primary">Pesquisar</button>
+          <button type="button" class="btn btn-success">Salvar</button>
+          <button type="button" class="btn btn-warning">Alterar</button>
+          <button type="button" class="btn btn-danger">Excluir</button>    
+      <!--fim Botões-->
+      <!--Tabela financeiro-->
+      <div class="page-header"></div>      
+      <div class="clearfix"></div><!--Macete para quebra de linha-->
+      <br>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Comentário</th>
+          <th>Data</th>
+          <th>Valor</th>
+          <tr>
+            <td>Romulo</td>
+            <td>(27)99687-6661</td>
+            <td>Tatuagem da aguia de facas.</td>
+            <td>26/12/16</td>
+            <td>R$500.00</td>
+          </tr>
+          <tr>
+            <td>Kell</td>
+            <td>(27)99687-6661</td>
+            <td>Tatuagens da rosa e do gatinho.</td>
+            <td>26/12/16</td>
+            <td>R$650.00</td>
+          </tr>          
+        </table>
+      <div class="table-responsive" align="right">
+        <table class="table table-striped">
+          <th>Total de receita(s)  =  R$ 1150.00</th>
+          <tr></tr>
+          <th>Total de despesa(s)  =  R$ 0.00</th>
+          <tr></tr>
+          <th>Total geral  =  R$ 1150.00</th>
+        </table>
+      </div>            
+    </div>
+    <!--fim Tabela financeiro-->
+    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Necessário incluir (abaixo), para usar o Angular -->
+    <script src="js/angular.min.js"></script>
+  </body>
+</html>
